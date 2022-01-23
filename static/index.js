@@ -122,7 +122,7 @@ function gameRestart() {
     _gameScore = 0;
     _gameOver = false;
     _gameStart = false;
-    _gameTimeNum = 20;
+    _gameTimeNum = 10;    //总时间
     GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
     countBlockSize();
     refreshGameLayer(GameLayer[0]);
@@ -261,7 +261,7 @@ function gameTapEvent(e) {
         tar = document.getElementById(p.id);
         tar.className = tar.className.replace(_ttreg, ' tt$1');
         _gameBBListIndex++;
-        _gameScore++;
+        _gameScore+=5;            //计分
         gameLayerMoveNextRow();
     } else if (_gameStart && !tar.notEmpty) {
         createjs.Sound.play("err");
