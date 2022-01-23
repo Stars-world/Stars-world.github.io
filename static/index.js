@@ -261,7 +261,7 @@ function gameTapEvent(e) {
         tar = document.getElementById(p.id);
         tar.className = tar.className.replace(_ttreg, ' tt$1');
         _gameBBListIndex++;
-        _gameScore++;            //计分
+        _gameScore+=1;            //计分
         gameLayerMoveNextRow();
     } else if (_gameStart && !tar.notEmpty) {
         createjs.Sound.play("err");
@@ -297,6 +297,7 @@ function closeWelcomeLayer() {
 function showWelcomeLayer() {
     var l = document.getElementById('welcome');
     l.style.display = 'block';
+    
 }
 
 function showGameScoreLayer() {
